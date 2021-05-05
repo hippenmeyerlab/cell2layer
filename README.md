@@ -18,13 +18,16 @@ Note, in the example only one layer, hence two layer boundaries are chosen.
 
 ### Output
 Executing the `cell2layer.py` Fiji (jython) script, will assign each marked point to
-the layer (marked in magenta) where it is placed in. Cells marked outside of the layer boundaries are discarded.
+the layer (marked in magenta) where it is placed in. If only one layer is defined, marked cells are assigned to layer 0. Cells marked outside of the layer boundaries marked as such in the output.
 
 <p align="center">
     <img src="img/two_layers_3.png" alt="Points are assigned to layers as defined by the layer borders" width="512" />
 </p>
 
-The script computes the relative (normalized) and absolute positions of each marked point regarding the first and last layer boundaries, as well as, its relative position within its assigned layer. For each marked point the *shortest distance* to the first (`cell_abs_distance_to_first_layer`) and last layer (`cell_abs_distance_to_last_layer`) boundary is computed (in pixel). From this, the relative position (`cell_relative_dist`) of the point is derived, where the first layer boundary is defined as 0 and the last as 1.
+The script computes the relative and absolute positions of each marked point regarding the first and last layer boundaries, as well as, its relative position within its assigned layer. For each marked point the *shortest distance* to the first (`cell_abs_distance_to_first_layer`) and last layer (`cell_abs_distance_to_last_layer`) boundary is computed (in pixel), resulting in two distances *d*<sub>1</sub> and *d*<sub>2</sub>. From this, the relative distance (`cell_relative_dist`) of the point is derived, where the first layer boundary is defined as 0 and the last as 1.
+
+*rd*<sub>1</sub> = *d*<sub>1</sub> / (*d*<sub>1</sub> + *d*<sub>2</sub>)
+
 
 ### More layers
 
@@ -41,3 +44,11 @@ The following tab separated table is written as output.
 <p align="center">
     <img src="img/result_table.png" alt="Points are assigned to layers as defined by the layer borders" style="width:95%;" />
 </p>
+
+
+The script computes the relative and absolute distances of each marked cells to its layer boundaries. Layer boundaries are manually provied as segmented line segments. For each cell the shortest distance to the layer boundaries resulting in two distances *d*<sub>1</sub> and *d*<sub>2</sub>. The normalized (relative) distance is computed by
+
+*rd*<sub>1</sub> = *d*<sub>1</sub> / (*d*<sub>1</sub> + *d*<sub>2</sub>)
+
+ as well as, its relative position within its assigned layer. For each marked point the *shortest distance* to the first (`cell_abs_distance_to_first_layer`) and last layer (`cell_abs_distance_to_last_layer`) boundary is computed (in pixel). From this, the relative position (`cell_relative_dist`) of the point is derived, where the first layer boundary is defined as 0 and the last as 1.
+-->
