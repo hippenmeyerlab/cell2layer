@@ -11,20 +11,6 @@ from ij.gui import Roi, Overlay, PolygonRoi, PointRoi, TextRoi, Line, ShapeRoi
 
 from ij.plugin.Selection import lineToArea
 
-# old quick and dirty funciton
-def get_distances_edt(border, points, imp):
-	blank = IJ.createImage("Blank", "8-bit white", imp.getWidth(), imp.getHeight(), 1)
-	blank.setAntialiasRendering(False)
-	ip = blank.getProcessor()
-	ip.setValue(0)
-
-	border.drawPixels(ip)
-	IJ.run(blank, "Exact Euclidean Distance Transform (3D)", "")
-	dt = IJ.getImage()
-	distances = [dt.getProcessor().getf(int(p.getX()), int(p.getY())) for p in points]
-	dt.close()
-
-	return distances
 
 def get_distances(border, points, imp):
 	# http://csharphelper.com/blog/2016/09/find-the-shortest-distance-between-a-point-and-a-line-segment-in-c/
@@ -159,7 +145,7 @@ def get_layer_dist_lkp(layers, imp):
 	for l in layers[1:-1]:
 		lcopy = l.clone()
 		lcopy.setStrokeWidth(1)
-		intersect = ShapeRoi(perp_line.clone()).and(ShapeRoi(lineToArea(lcopy)))
+		intersect = ShapeRoi(perp_line.clone()).and(ShapeRoi(lineToArea(ShapeRoi(lcopy))))
 		xi = intersect.getFloatPolygon().xpoints[0]
 		yi = intersect.getFloatPolygon().ypoints[0]
 		d1 =  get_distances(layers[0], PointRoi(xi, yi), imp)[0]
