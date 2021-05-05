@@ -12,7 +12,7 @@ subsequent layers. Then, points (usually cell positions) are marked with ImageJ'
 <img src="img/layers_and_points_definition.png" alt="Mannually add layer borders and points of interest" width="512"/>
 </p>
 
-Note, in the example image shown above, marked points do not correspond to cells, and are choosen randomly.
+Note, in the example image shown above, marked points (yellow crosses) do not correspond to cells, and are choosen randomly.
 
 ### Output
 Executing the `cell2layer.py` Fiji (jython) script, will assign each marked point to
