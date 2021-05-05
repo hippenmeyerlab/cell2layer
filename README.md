@@ -8,15 +8,16 @@ First, cell layers are defined by `Segmented Line` ROIS in
 ImageJ and added to the `ROI Manager`. Each layer ROI marks the boundary of the
 subsequent layers. Then, points (usually cell positions) are marked with ImageJ's `Point` ROI, and are also added to the manager. The naming of the ROIs can be arbritary, but layer boundariy ROIs need to be added in sequential order.
 
-
+<p align="center">
 <img src="img/layers_and_points_definition.png" alt="Mannually add layer borders and points of interest" width="512"/>
+</p>
 
 ### Output
 Executing the `cell2layer.py` Fiji (jython) script, will assign each marked point to
 the layer (marked in magenta) where it is placed in. Cells marked outside of the layer boundaries's convex hull are discarded.
-
-<img src="img/cell_layer_assignment.png" alt="Points are assigned to layers as defined by the layer borders" width="512"/>
-
+<p align="center">
+<img src="img/cell_layer_assignment.png" alt="Points are assigned to layers as defined by the layer borders" width="512" />
+</p>
 The script computes the relative and absolute positions of each marked point regarding
 the first and last layer boundaries, as well as, its relative position within its assigned layer. For each marked point the *shortest distance* to the first (`cell_abs_distance_to_first_layer`) and last layer (`cell_abs_distance_to_last_layer`) boundary is computed (in pixel). From this, the relative position (`cell_relative_dist`) of the point is derived, where the first layer boundary is defined as 0 and the last as 1.
 
@@ -26,5 +27,6 @@ Furthermore, the relative size of each layer is approximated as ratios of the la
 
 ## Result
 The following tab separated table is written as output.
-
-<img src="img/result_table.png" alt="Points are assigned to layers as defined by the layer borders" style="width:95%;"/>
+<p align="center">
+<img src="img/result_table.png" alt="Points are assigned to layers as defined by the layer borders" style="width:95%;" />
+</p>
