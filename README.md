@@ -31,7 +31,7 @@ The script computes the relative and absolute positions of each marked point reg
 
 ### More layers
 
-If more layer boundaries are provied, the relative position of a marked point within its assinged layer, the same computation is applied for the layer boundaries of the layer, where the point was assined to. (`cell_relative_intra_dist`).
+If more layer boundaries are provided, the relative position of a marked point within its assinged layer, the same computation is applied for the layer boundaries of the layer, where the point was assined to. (`cell_relative_intra_dist`).
 
 <p align="center">
     <img src="img/more_layers_1.png" alt="Points are assigned to layers as defined by the layer borders" width="512" />
@@ -45,10 +45,9 @@ The following tab separated table is written as output.
     <img src="img/result_table.png" alt="Points are assigned to layers as defined by the layer borders" style="width:95%;" />
 </p>
 
-
-The script computes the relative and absolute distances of each marked cells to its layer boundaries. Layer boundaries are manually provied as segmented line segments. For each cell the shortest distance to the layer boundaries resulting in two distances *d*<sub>1</sub> and *d*<sub>2</sub>. The normalized (relative) distance is computed by
+<!---
+The script computes the relative and absolute distances of each marked cells to its layer boundaries. Layer boundaries are manually provided as segmented lines. For each cell the shortest distance to the layer boundaries resulting in two distances *d*<sub>1</sub> and *d*<sub>2</sub>. The normalized (relative) distance is computed by
 
 *rd*<sub>1</sub> = *d*<sub>1</sub> / (*d*<sub>1</sub> + *d*<sub>2</sub>)
 
- as well as, its relative position within its assigned layer. For each marked point the *shortest distance* to the first (`cell_abs_distance_to_first_layer`) and last layer (`cell_abs_distance_to_last_layer`) boundary is computed (in pixel). From this, the relative position (`cell_relative_dist`) of the point is derived, where the first layer boundary is defined as 0 and the last as 1.
 -->
