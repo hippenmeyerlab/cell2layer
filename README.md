@@ -2,7 +2,7 @@
 ---
 Cell2layer quantifies relative and absolute positions of manually marked cells within
 manually defined cell layers.
-Please refer to: https://doi.org/10.1101/2022.02.16.480659
+Please refer to: https://doi.org/10.1093/oons/kvac009
 
 
 ### Input
