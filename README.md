@@ -3,7 +3,9 @@
 Cell2layer quantifies relative and absolute positions of manually marked cells within
 manually defined cell layers.
 
-Please refer to Hansen et al 2022 for citation: https://doi.org/10.1093/oons/kvac009
+Please refer to Hansen et al 2022 for citation: 
+Tissue-Wide Effects Override Cell-Intrinsic Gene Function in Radial Neuron Migration 
+https://doi.org/10.1093/oons/kvac009
 
 
 ### Input
